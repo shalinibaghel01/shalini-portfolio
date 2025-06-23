@@ -6,7 +6,6 @@
   <title>Shalini Baghel | Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-  /* Existing CSS — NO CHANGE made to your existing styling */
   * {
     margin: 0;
     padding: 0;
@@ -38,6 +37,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     padding: 20px 40px;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -52,20 +52,20 @@
     color: #007BFF;
   }
 
-  /* 🎯 HAMBURGER MENU STYLING */
   .hamburger {
     display: none;
     font-size: 1.8rem;
     cursor: pointer;
+    color: #007BFF;
   }
 
   .nav-right {
     display: flex;
     align-items: center;
-    gap: 20px;
   }
 
   .nav-right a {
+    margin-left: 25px;
     text-decoration: none;
     color: #333;
     font-weight: 500;
@@ -73,36 +73,6 @@
 
   .nav-right a:hover {
     color: #007BFF;
-  }
-
-  /* ✅ SHOW HAMBURGER ON SMALL DEVICES */
-  @media (max-width: 768px) {
-    .hamburger {
-      display: block;
-    }
-
-    .nav-right {
-      display: none;
-      flex-direction: column;
-      background-color: #f9f9f9;
-      width: 100%;
-      text-align: center;
-      padding: 10px 0;
-    }
-
-    .nav-right.active {
-      display: flex;
-    }
-
-    .nav-right a {
-      padding: 10px 0;
-      width: 100%;
-    }
-
-    header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
   }
 
   .hero {
@@ -210,20 +180,20 @@
     font-weight: 500;
   }
 
-  /* ✅ SERVICES SECTION FIX */
   .service-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     max-width: 1200px;
     margin: auto;
-    padding: 40px 20px;
+    padding: 0 20px;
   }
 
-  @media screen and (max-width: 768px) {
-    .service-grid {
-      grid-template-columns: 1fr;
-    }
+  .service-box {
+    border: 2px solid #000;
+    background-color: #d9ecff;
+    border-radius: 12px;
+    padding: 25px;
   }
 
   .certifications {
@@ -254,7 +224,67 @@
     left: 0;
   }
 
+  /* =================== Responsive =================== */
+  @media (max-width: 1024px) {
+    .nav-right {
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 1.6rem;
+    }
+
+    .hero p {
+      font-size: 0.95rem;
+      padding: 0 10px;
+    }
+
+    .info-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .nav-right a {
+      font-size: 0.95rem;
+    }
+
+    .hamburger {
+      display: block;
+    }
+
+    .nav-right {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #fff;
+    }
+
+    .nav-right.active {
+      display: flex;
+    }
+
+    .nav-right a {
+      margin: 0;
+      padding: 10px 20px;
+      border-top: 1px solid #eee;
+    }
+
+    .service-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
   @media (max-width: 480px) {
+    header {
+      padding: 15px 20px;
+    }
+
+    .nav-left {
+      font-size: 1.2rem;
+    }
+
     .hero .circle-img {
       width: 120px;
       height: 120px;
