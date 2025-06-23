@@ -6,318 +6,6 @@
   <title>Shalini Baghel | Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    background-color: #f9f9f9;
-    color: #333;
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    height: 100vh;
-  }
-
-  section {
-    scroll-snap-align: start;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 20px 40px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-
-  .nav-left {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #007BFF;
-  }
-
-  .hamburger {
-    display: none;
-    font-size: 1.8rem;
-    cursor: pointer;
-    color: #007BFF;
-  }
-
-  .nav-right {
-    display: flex;
-    align-items: center;
-  }
-
-  .nav-right a {
-    margin-left: 25px;
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-  }
-
-  .nav-right a:hover {
-    color: #007BFF;
-  }
-
-  .hero {
-    align-items: center;
-    text-align: center;
-    padding: 60px 20px;
-  }
-
-  .hero .circle-img {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-bottom: 20px;
-    border: 5px solid #007BFF;
-  }
-
-  .hero .circle-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-
-  .hero p {
-    font-size: 1rem;
-    max-width: 600px;
-    margin-bottom: 20px;
-    color: #666;
-  }
-
-  .social-icons {
-    margin: 20px 0;
-  }
-
-  .social-icons a {
-    margin: 0 10px;
-    font-size: 1.5rem;
-    color: #333;
-    transition: color 0.3s;
-  }
-
-  .social-icons a:hover {
-    color: #007BFF;
-  }
-
-  .download-cv {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s;
-  }
-
-  .download-cv:hover {
-    background-color: #0056b3;
-  }
-
-  .about {
-    background-color: #fff;
-    padding: 60px 20px;
-    max-width: 1000px;
-    margin: auto;
-  }
-
-  .about h2 {
-    font-size: 2rem;
-    color: #007BFF;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  .about-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .about-content p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #444;
-  }
-
-  .info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-  }
-
-  .info-item {
-    background-color: #f0f4f8;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    font-weight: 500;
-  }
-
-  .service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 20px;
-  }
-
-  .service-box {
-    border: 2px solid #000;
-    background-color: #d9ecff;
-    border-radius: 12px;
-    padding: 25px;
-  }
-
-  .certifications {
-    margin-top: 30px;
-  }
-
-  .certifications h3 {
-    font-size: 1.5rem;
-    color: #007BFF;
-    margin-bottom: 10px;
-  }
-
-  .certifications ul {
-    list-style: none;
-    padding-left: 0;
-  }
-
-  .certifications li {
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
-  }
-
-  .certifications li::before {
-    content: '\2714';
-    color: #28a745;
-    position: absolute;
-    left: 0;
-  }
-
-  /* =================== Responsive =================== */
-  @media (max-width: 1024px) {
-    .nav-right {
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 1.6rem;
-    }
-
-    .hero p {
-      font-size: 0.95rem;
-      padding: 0 10px;
-    }
-
-    .info-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .nav-right a {
-      font-size: 0.95rem;
-    }
-
-    .hamburger {
-      display: block;
-    }
-
-    .nav-right {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      background-color: #fff;
-    }
-
-    .nav-right.active {
-      display: flex;
-    }
-
-    .nav-right a {
-      margin: 0;
-      padding: 10px 20px;
-      border-top: 1px solid #eee;
-    }
-
-    .service-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  @media (max-width: 480px) {
-    header {
-      padding: 15px 20px;
-    }
-
-    .nav-left {
-      font-size: 1.2rem;
-    }
-
-    .hero .circle-img {
-      width: 120px;
-      height: 120px;
-    }
-
-    .hero h1 {
-      font-size: 1.4rem;
-    }
-
-    .hero p {
-      font-size: 0.9rem;
-    }
-
-    .download-cv {
-      font-size: 0.9rem;
-      padding: 8px 16px;
-    }
-
-    .about h2 {
-      font-size: 1.8rem;
-    }
-  }
-</style>
-</head>
-<body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shalini Baghel | Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
     * {
       margin: 0;
       padding: 0;
@@ -340,6 +28,88 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* HAMBURGER MENU STYLES */
+    @media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 1001;
+  }
+
+  .nav-right {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100vw;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .nav-right.active {
+    display: flex;
+  }
+
+  .nav-right a {
+    font-size: 1.2rem;
+    color: #007BFF;
+  }
+
+  .hamburger span {
+    height: 3px;
+    width: 25px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}
+/* --------------------------------------------- */
+
+
+
+    .nav-left {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #007BFF;
+    }
+    .nav-right a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+    .nav-right a:hover {
+      color: #007BFF;
     }
     .hero {
       align-items: center;
@@ -453,29 +223,122 @@
       position: absolute;
       left: 0;
     }
+
+    .services {
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #ffffff, #e6f2ff);
+}
+
+.services h2 {
+  color: #007BFF;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.service-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.service-box {
+  flex: 1 1 300px;
+  border: 3px solid #007BFF;
+  background-color: #f0f9ff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  max-width: 360px;
+  text-align: center;
+}
+
+.service-box i {
+  font-size: 2rem;
+  color: #007BFF;
+}
+
+.service-box h3 {
+  margin-top: 15px;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.service-box p {
+  margin-top: 10px;
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .nav-right {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: white;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: none;
+  }
+
+  .nav-right.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* ✅ Responsive stacking for small screens */
+@media (max-width: 768px) {
+  .service-box {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .services h2 {
+    font-size: 2rem;
+  }
+
+  .service-grid {
+    gap: 20px;
+    padding: 0 10px;
+  }
+}
+
+
   </style>
 </head>
 <body>
-<header>  
-  <div class="nav-left">Shalini Baghel</div>
-  <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
-  <nav class="nav-right" id="navbar">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+    <header>
+        <div class="nav-left">Shalini Baghel</div>
+      
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      
+        <nav class="nav-right" id="navMenu">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+      
 
-<!-- Tumhara pura content yahan aayega -->
-
-<script>
-  function toggleMenu() {
-    document.getElementById("navbar").classList.toggle("active");
-  }
-</script>
   <section class="hero" id="home">
     <div style="text-align: center; margin-bottom: 30px;">
       <img src="images/profile.png" alt="Shalini Baghel"
@@ -499,7 +362,9 @@
         <a href="https://twitter.com/shalinibaghel10" target="_blank"><i class="fab fa-twitter"></i></a>
         <a href="https://t.me/Shalini_9111" target="_blank"><i class="fab fa-telegram"></i></a>
       </div>
-      <a class="download-cv" href="c:\Users\shali\Downloads\Shalini_Baghel_CV.docx" download>Download CV</a>
+      <!-- <a class="download-cv" href="c:\Users\shali\Downloads\Shalini_Baghel_CV.docx" download>Download CV</a> -->
+      <a class="download-cv" href="https://drive.google.com/file/d/1oQkYnc7ZPYifNYMhYyICIx-inCr1Xfcq/view?usp=drive_link" download target="_blank">Download CV</a>
+
     </div>
   </section>
   <section class="about" id="about">
@@ -513,7 +378,7 @@
         <div class="info-item">🎓 B.Tech in Computer Science</div>
         <div class="info-item">🏢 System Operation Engineer</div>
         <div class="info-item">📍 Pune, India</div>
-        <div class="info-item">🗣️ Languages: Hindi, English</div>
+        <div class="info-item">🗣 Languages: Hindi, English</div>
         <div class="info-item">🎯 Career Goal:<br> Design scalable, secure, and automated cloud infrastructure using AWS, Docker, Terraform & CI/CD tools</div>
       </div>
 
@@ -527,43 +392,63 @@
       </div>
     </div>
   </section>
+  
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+  
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+  
+    // Optional: Close nav when clicking on a nav link (mobile)
+    document.querySelectorAll('.nav-right a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+  </script>
+  
 </body>
 </html>
 <section class="services" id="services">
-  <h2 style="color: #007BFF; font-size: 2.5rem; margin-bottom: 40px; text-align: center;">My Services</h2>
-  <div class="service-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: auto;">
-    <div class="service-box" style="border: 2px solid #000; background-color: #d9ecff; border-radius: 12px; padding: 25px;">
-      <i class="fas fa-cloud" style="font-size: 2rem; color: #007BFF;"></i>
-      <h3 style="margin-top: 15px; font-size: 1.4rem;">Cloud Infrastructure Setup</h3>
-      <p style="margin-top: 10px; color: #333;">Deploying secure, scalable cloud environments using AWS EC2, S3, VPC, IAM, and more.</p>
+    <h2>My Services</h2>
+    <div class="service-grid">
+      <div class="service-box">
+        <i class="fas fa-cloud"></i>
+        <h3>Cloud Infrastructure Setup</h3>
+        <p>Deploying secure, scalable cloud environments using AWS EC2, S3, VPC, IAM, and more.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-cogs"></i>
+        <h3>CI/CD Pipeline Implementation</h3>
+        <p>Automating build, test, and deployment workflows with Jenkins, GitHub Actions, and AWS CodePipeline.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-docker"></i>
+        <h3>Containerization & Orchestration</h3>
+        <p>Building containerized apps using Docker and managing them with Kubernetes (EKS) and Helm.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-chart-line"></i>
+        <h3>Monitoring & Logging</h3>
+        <p>Implementing real-time monitoring using CloudWatch, Prometheus, Grafana, and log alerts.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-code"></i>
+        <h3>Infrastructure as Code (IaC)</h3>
+        <p>Automating infrastructure provisioning with Terraform and AWS CLI for consistency and version control.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-user-graduate"></i>
+        <h3>DevOps Consultation</h3>
+        <p>Guiding teams on best DevOps practices and helping them adopt modern tools and methodologies.</p>
+      </div>
     </div>
-    <div class="service-box" style="border: 2px solid #000; background-color: #d9ecff; border-radius: 12px; padding: 25px;">
-      <i class="fas fa-cogs" style="font-size: 2rem; color: #007BFF;"></i>
-      <h3 style="margin-top: 15px; font-size: 1.4rem;">CI/CD Pipeline Implementation</h3>
-      <p style="margin-top: 10px; color: #333;">Automating build, test, and deployment workflows with Jenkins, GitHub Actions, and AWS CodePipeline.</p>
-    </div>
-    <div class="service-box" style="border: 2px solid #000; background-color: #d9ecff; border-radius: 12px; padding: 25px;">
-      <i class="fas fa-docker" style="font-size: 2rem; color: #007BFF;"></i>
-      <h3 style="margin-top: 15px; font-size: 1.4rem;">Containerization & Orchestration</h3>
-      <p style="margin-top: 10px; color: #333;">Building containerized apps using Docker and managing them with Kubernetes (EKS) and Helm.</p>
-    </div>
-    <div class="service-box" style="border: 2px solid #000; background-color: #d9ecff; border-radius: 12px; padding: 25px;">
-      <i class="fas fa-chart-line" style="font-size: 2rem; color: #007BFF;"></i>
-      <h3 style="margin-top: 15px; font-size: 1.4rem;">Monitoring & Logging</h3>
-      <p style="margin-top: 10px; color: #333;">Implementing real-time monitoring using CloudWatch, Prometheus, Grafana, and log alerts.</p>
-    </div>
-    <div class="service-box" style="border: 2px solid #000; background-color: #d9ecff; border-radius: 12px; padding: 25px;">
-      <i class="fas fa-code" style="font-size: 2rem; color: #007BFF;"></i>
-      <h3 style="margin-top: 15px; font-size: 1.4rem;">Infrastructure as Code (IaC)</h3>
-      <p style="margin-top: 10px; color: #333;">Automating infrastructure provisioning with Terraform and AWS CLI for consistency and version control.</p>
-    </div>
-    <div class="service-box" style="border: 2px solid #000; background-color: #d9ecff; border-radius: 12px; padding: 25px;">
-      <i class="fas fa-user-graduate" style="font-size: 2rem; color: #007BFF;"></i>
-      <h3 style="margin-top: 15px; font-size: 1.4rem;">DevOps Consultation</h3>
-      <p style="margin-top: 10px; color: #333;">Guiding teams on best DevOps practices and helping them adopt modern tools and methodologies.</p>
-    </div>
-  </div>
-</section>
+  </section>
+  
 
 <section class="projects" id="projects" style="padding: 60px 20px; background: linear-gradient(to bottom, #ffffff, #e6f2ff);">
   <h2 style="text-align: center; color: #007BFF; font-size: 2.5rem; margin-bottom: 40px;">My Projects</h2>
@@ -584,7 +469,7 @@
     </div>
 
     <div style="flex: 1 1 300px; border: 3px solid #007BFF; background-color: #f0f9ff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-      <h3 style="color: #007BFF;">🛠️ AWS Infrastructure by Terraform</h3>
+      <h3 style="color: #007BFF;">🛠 AWS Infrastructure by Terraform</h3>
       <p><strong>Tech Stack:</strong> AWS EC2, VPC, S3, IAM, Terraform</p>
       <p>Provisioned complete AWS infrastructure using Terraform to enable version-controlled IaC workflow.</p>
       <a href="https://github.com/shalinibaghel01/shalinibaghel01-AWS-Infrastructure-By-Terraform" target="_blank" style="display: inline-block; margin-top: 10px; color: #fff; background-color: #007BFF; padding: 8px 16px; border-radius: 6px; text-decoration: none;">View Project</a>
@@ -653,5 +538,3 @@
     </div>
   </div>
 </section>
-</body>
-</html>
